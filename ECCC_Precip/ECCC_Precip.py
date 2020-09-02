@@ -42,8 +42,7 @@ def PrintSummary(stations):
     for a,b,c,d in zip(stations['Name'],stations['Station ID'],stations['First Year'],stations['Last Year']): print('%50s:   %s           %d  %d'%(a,b,c,d))
         
 def GetURL(StationID,Year):
-#     url_template='http://climate.weather.gc.ca/climate_data/bulk_data_e.html?format=csv&stationID=XXX_StationID&Year=XXX_Year&Month=XXX_Month&Day=14&timeframe=2&submit=%20Download+Data'
-    url_template='http://climate.weather.gc.ca/climate_data/bulk_data_e.html?format=csv&stationID=XXX_StationID&Year=XXX_Year&timeframe=2&submit=%20Download+Data'
+    url_template='https://climate.weather.gc.ca/climate_data/bulk_data_e.html?format=csv&stationID=XXX_StationID&Year=XXX_Year&timeframe=2&submit=%20Download+Data'
     MyURL=url_template.replace('XXX_StationID',StationID)
     MyURL=MyURL.replace('XXX_Year','%04d' % Year)
     return MyURL
